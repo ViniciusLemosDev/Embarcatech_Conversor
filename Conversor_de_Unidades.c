@@ -24,6 +24,16 @@ int main()
         scanf("%d", &tipoUnidade);
 
         switch (tipoUnidade) {
+        case 1:
+            printf("Digite a unidade de origem (metro, centímetro, milímetro):\n");
+            scanf("%d", &unidadeOrigem);
+
+            printf("Digite a unidade de destino (metro, centímetro, milímetro):\n");
+            scanf("%d", &unidadeDestino);
+
+            printf("Digite o valor a ser convertido:\n");
+            scanf("%lf", &valor);
+            break;
         case 2: // Unidades de Massa
             printf("\nDigite o número da unidade de origem (1. quilograma, 2. grama, 3. tonelada):\n");
             scanf("%d", &unidadeOrigem);
