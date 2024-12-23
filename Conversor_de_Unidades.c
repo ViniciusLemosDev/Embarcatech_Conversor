@@ -23,18 +23,16 @@ int main() {
 
     switch (tipoUnidade) {
         case 1: // Unidades de Comprimento
-            printf("Digite a unidade de origem (1 - metro, 2 - centímetro, 3 - milímetro):\n");
+            printf("Digite a unidade de origem (1. metro, 2. centímetro, 3. milímetro):\n");
             scanf("%d", &unidadeOrigem);
 
-            printf("Digite a unidade de destino (1 - metro, 2 - centímetro, 3 - milímetro):\n");
+            printf("Digite a unidade de destino (1. metro, 2. centímetro, 3. milímetro):\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido:\n");
             scanf("%lf", &valor);
 
             resultado = comprimento(unidadeOrigem, unidadeDestino, valor);
-
-
 
             if (resultado >= 0) {
     if ((unidadeOrigem == 1 && unidadeDestino == 2) || (unidadeOrigem == 2 && unidadeDestino == 3)) {
