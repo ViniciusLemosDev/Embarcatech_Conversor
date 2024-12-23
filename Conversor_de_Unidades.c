@@ -1,45 +1,64 @@
 #include <stdio.h>
 #include <locale.h>
+#include "massa.h"
 
 int main()
 {
     setlocale(LC_ALL, "Portuguese_Brazil");
 
-    double valor;
-    int tipoUnidade;
-    char unidadeOrigem, unidadeDestino;
+    double valor, resultado;
+    int tipoUnidade, unidadeOrigem, unidadeDestino;
     
-    printf("Escolha uma das conversıes:\n"
-       "1 - Unidades de Comprimento\n"
-       "2 - Unidades de Massa\n"
-       "3 - Unidades de Volume\n"
-       "4 - Unidades de Temperatura\n"
-       "5 - Unidades de Velocidade\n"
-       "6 - Unidades de Energia\n"
-       "7 - Unidades de ¡rea\n"
-       "8 - Unidades de Tempo\n"
-       "9 - Unidades de MemÛria\n");
-    scanf("%d", &tipoUnidade);
+    do {
+        printf("\nEscolha uma das convers√µes:\n"
+               "1 - Unidades de Comprimento\n"
+               "2 - Unidades de Massa\n"
+               "3 - Unidades de Volume\n"
+               "4 - Unidades de Temperatura\n"
+               "5 - Unidades de Velocidade\n"
+               "6 - Unidades de Energia\n"
+               "7 - Unidades de √Årea\n"
+               "8 - Unidades de Tempo\n"
+               "9 - Unidades de Mem√≥ria\n"
+               "0 - Para sair!\n");
+        scanf("%d", &tipoUnidade);
 
-    switch (tipoUnidade)
-    {
-    case 1: // Unidades de Comprimento
-        
-        printf("Digite a unidade de origem (metro, centÌmetro, milÌmetro):\n");
-        scanf("%s", &unidadeOrigem);
+        switch (tipoUnidade) {
+        case 2: // Unidades de Massa
+            printf("\nDigite o n√∫mero da unidade de origem (1. quilograma, 2. grama, 3. tonelada):\n");
+            scanf("%d", &unidadeOrigem);
 
-        printf("Digite a unidade de destino (metro, centÌmetro, milÌmetro):\n");
-        scanf("%s", &unidadeDestino);
+            printf("Digite o n√∫mero da unidade de destino (1. quilograma, 2. grama, 3. tonelada):\n");
+            scanf("%d", &unidadeDestino);
 
-        printf("Digite o valor a ser convertido:\n");
-        scanf("%lf", &valor);
+            printf("Digite o valor a ser convertido:\n");
+            scanf("%lf", &valor);
 
-        break;
-    
-    default:
-        printf("Convers„o inv·lida");
-        break;
-    }
+            resultado = massa(unidadeOrigem, unidadeDestino, valor);
+
+            if (resultado != -1) {
+                printf("\nResultado da convers√£o: %.2lf\n", resultado);
+            } else {
+                printf("\nErro na convers√£o.\n");
+            }
+
+            printf("Pressione Enter para continuar...\n");
+            while (getchar() != '\n'); // Limpa buffer
+            getchar(); // Aguarda Enter
+            break;
+
+        case 0: // Sair do programa
+            printf("\nEncerrando o programa.\n");
+            break;
+
+        default:
+            printf("\nConvers√£o inv√°lida ou n√£o implementada.\n");
+            printf("Pressione Enter para continuar...\n");
+            while (getchar() != '\n'); // Limpa buffer
+            getchar(); // Aguarda Enter
+            break;
+        }
+    } while (tipoUnidade != 0);
 
     return 0;
 }
