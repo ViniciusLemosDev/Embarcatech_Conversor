@@ -2,6 +2,7 @@
 #include <locale.h>
 #include "massa.h"
 #include "area.h"
+#include "area.c"
 #include "Comprimento.h"
 
 int main()
@@ -88,6 +89,16 @@ int main()
                 ;      // Limpa buffer
             getchar(); // Aguarda Enter
             break;
+
+        case 7: // unidade Área
+            printf("\n Digite o número da unidade de origem(1. metros quadrados, 2. centímetros quadrados): \n");
+            scanf("%d", &unidadeOrigem);
+
+            printf("Digite o número da unidade de destino(1. metros quadrados, 2.  centímetros quadrados): \n");
+            scanf("%d", &unidadeDestino);
+
+            printf("Digite o valor a ser convertido:\n");
+            scanf("lf", &valor);
 
         case 0: // Sair do programa
             printf("\nEncerrando o programa.\n");
