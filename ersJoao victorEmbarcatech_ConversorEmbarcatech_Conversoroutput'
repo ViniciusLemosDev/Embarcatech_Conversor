@@ -1,0 +1,60 @@
+[33mcommit 184c9106d749dfb9491fcc189e649e0b914797f6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mArea[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Area[m[33m)[m
+Merge: 57f27bf 384ee8e
+Author: ViniciusLemosDev <viniciuslemos306@gmail.com>
+Date:   Mon Dec 23 10:59:32 2024 -0300
+
+    adição da conversão de massa na main
+
+[33mcommit 57f27bfcfd6b47b6a7ac24b6f7eb4153c794f21d[m[33m ([m[1;31morigin/Comprimento[m[33m)[m
+Author: YasminCruz001 <damascenocruzyasmin@gmail.com>
+Date:   Mon Dec 23 04:33:18 2024 -0300
+
+    Correção de Interface
+
+[33mcommit 31eadd0ad9748a5f7c69ff852cf44077123867dd[m
+Author: YasminCruz001 <damascenocruzyasmin@gmail.com>
+Date:   Mon Dec 23 03:45:46 2024 -0300
+
+    Correção de Interface
+
+[33mcommit 384ee8e2cbd93183a43c42bf50beb71b7f722518[m[33m ([m[1;31morigin/massa[m[33m)[m
+Author: ViniciusLemosDev <viniciuslemos306@gmail.com>
+Date:   Mon Dec 23 01:24:50 2024 -0300
+
+    adição da conversão de massa
+
+[33mcommit 9ba3b6a5d98ffb28b6220e5c93ce70af180d8028[m
+Author: ViniciusLemosDev <viniciuslemos306@gmail.com>
+Date:   Mon Dec 23 01:19:49 2024 -0300
+
+    adição da converção de massa
+
+[33mcommit e1fa78198f2704cceb7f8cadb48acc248a714683[m
+Author: YasminCruz001 <damascenocruzyasmin@gmail.com>
+Date:   Fri Dec 20 20:35:08 2024 -0300
+
+    Adição de Comprimento.h e implementação na main
+
+[33mcommit e49f93b248524a3250d27ba0c2c388e1f6539bd9[m
+Author: YasminCruz001 <damascenocruzyasmin@gmail.com>
+Date:   Fri Dec 20 17:28:33 2024 -0300
+
+    Código Fonte
+
+[33mcommit 2da5e6140553f4e5c4ec3e76c3d1a5183a5a44ab[m
+Author: YasminCruz001 <damascenocruzyasmin@gmail.com>
+Date:   Fri Dec 20 16:24:30 2024 -0300
+
+    Delete Embarcatech_Conversor
+
+[33mcommit ad12c248c50d64f9f7fc4d413a3f1aaa85601aa3[m
+Author: YasminCruz001 <148450346+YasminCruz001@users.noreply.github.com>
+Date:   Thu Dec 19 00:48:19 2024 -0300
+
+    README.md
+
+[33mcommit 11f9a5dfc346b75101b7354786210481370e8ddc[m
+Author: YasminCruz001 <damascenocruzyasmin@gmail.com>
+Date:   Wed Dec 18 23:40:53 2024 -0300
+
+    Criação de Repositório

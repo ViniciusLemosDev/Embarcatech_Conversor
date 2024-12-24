@@ -7,9 +7,11 @@ double massa(int unidadeOrigem, int unidadeDestino, double valor)
     setlocale(LC_ALL, "Portuguese_Brazil");
     double resultado = 0.0;
 
-    switch (unidadeOrigem) {
+    switch (unidadeOrigem)
+    {
     case 1: // quilograma
-        switch (unidadeDestino) {
+        switch (unidadeDestino)
+        {
         case 1:
             printf("A unidade informada é a mesma da origem!\n");
             break;
@@ -26,7 +28,8 @@ double massa(int unidadeOrigem, int unidadeDestino, double valor)
         break;
 
     case 2: // grama
-        switch (unidadeDestino) {
+        switch (unidadeDestino)
+        {
         case 1:
             resultado = valor / 1000.0; // grama para quilograma
             break;
@@ -43,7 +46,8 @@ double massa(int unidadeOrigem, int unidadeDestino, double valor)
         break;
 
     case 3: // tonelada
-        switch (unidadeDestino) {
+        switch (unidadeDestino)
+        {
         case 1:
             resultado = valor * 1000.0; // tonelada para quilograma
             break;
