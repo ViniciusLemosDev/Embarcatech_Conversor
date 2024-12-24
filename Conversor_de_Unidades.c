@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <locale.h>
+#include "volume.h"
+#include "massa.c"
 #include "massa.h"
 #include "comprimento.h"
-#include "volume.h"
+#include "Memoria.h"
+
 
 int main()
 {
@@ -55,6 +58,7 @@ int main()
                 break;
 
             case 2: // Unidades de Massa
+
                 printf("\nDigite o número da unidade de origem (1. quilograma, 2. grama, 3. tonelada):\n");
                 scanf("%d", &unidadeOrigem);
 
@@ -79,6 +83,7 @@ int main()
                 while (getchar() != '\n');      // Limpa buffer
                 getchar(); // Aguarda Enter
                 break;
+
 
             case 3: // Unidades de Volume
                 printf("Digite a unidade de origem (1. litro, 2. mililitro, 3. metro cúbico):\n");
@@ -106,6 +111,30 @@ int main()
 
                 printf("Pressione Enter para continuar...\n");
                 while (getchar() != '\n'); // Limpa buffer
+            
+            case 9:
+                
+                printf("Digite a unidade de origem \n1.Bits\n2.Bytes\n3.KB\n4.MB\n5.GB\n6.TB\n");
+                scanf("%d", &unidadeOrigem);
+
+                printf("Digite a unidade de destino \n1.Bits\n2.Bytes\n3.KB\n4.MB\n5.GB\n6.TB\n");
+                scanf("%d", &unidadeDestino);
+
+                if (unidadeOrigem == unidadeDestino)
+                {
+                    printf("Conversão invalida! Você nao pode escolher a mesma unidade para a origem e destino!\n");
+                    return -1;
+                }
+
+                printf("Digite o valor a ser convertido:\n");
+                scanf("%lf", &valor);
+
+                resultado = memoria(unidadeOrigem, unidadeDestino, valor);
+
+                printf("Resultado da conversao: %.4lf\n", resultado);
+
+                printf("Pressione Enter para continuar...\n");
+                while (getchar() != '\n');      // Limpa buffer
                 getchar(); // Aguarda Enter
                 break;
 
@@ -114,7 +143,9 @@ int main()
                 break;
 
             default:
+
                 printf("Conversão inválida");
+
                 printf("Pressione Enter para continuar...\n");
                 while (getchar() != '\n');      // Limpa buffer
                 getchar(); // Aguarda Enter
