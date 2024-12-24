@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
-#include "massa.c"
 #include "massa.h"
 #include "comprimento.h"
-#include "volume.c"
 #include "volume.h"
 
 int main()
