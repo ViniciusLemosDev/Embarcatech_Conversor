@@ -118,7 +118,7 @@ static double memoria(int origem, int destino, double valor) {
         break;
     
     default:
-        printf("Convers√£o inv√°lida!\n");
+        printf("Convers„o inv·lida!\n");
         return -1;
     }
     
