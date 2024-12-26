@@ -1,23 +1,10 @@
 #ifndef TEMPO_H
 #define TEMPO_H
 
-// Implementação das funções auxiliares
-float segundosParaMinutos(float segundos) {
-    return segundos / 60;
-}
+float segundosParaMinutos(float segundos);
+float minutosParaSegundos(float minutos);
+float minutosParaHoras(float minutos);
+float horasParaMinutos(float horas);
+float converterTempo(int unidadeOrigem, int unidadeDestino, float valor);
 
-float minutosParaSegundos(float minutos) {
-    return minutos * 60;
-}
-
-float minutosParaHoras(float minutos) {
-    return minutos / 60;
-}
-
-float horasParaMinutos(float horas) {
-    return horas * 60;
-}
-// Declaração das funções
-void executarConversao();
-
-#endif
+#endif // TEMPO_H

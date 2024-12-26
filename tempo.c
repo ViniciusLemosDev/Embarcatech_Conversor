@@ -1,47 +1,39 @@
-#include <stdio.h>
 #include "tempo.h"
 
-// Função principal para executar as conversões
-void executarConversao() {
-    int opcao;
-    float valor, resultado;
+float segundosParaMinutos(float segundos) {
+    return segundos / 60;
+}
 
-    printf("=== Conversor de Unidades de Tempo ===\n");
-    printf("Escolha uma conversão:\n");
-    printf("1 - Segundos para Minutos\n");
-    printf("2 - Minutos para Segundos\n");
-    printf("3 - Minutos para Horas\n");
-    printf("4 - Horas para Minutos\n");
-    printf("Digite a opção desejada: ");
-    scanf("%d", &opcao);
+float minutosParaSegundos(float minutos) {
+    return minutos * 60;
+}
 
-    switch (opcao) {
-        case 1:
-            printf("Digite o valor em Segundos: ");
-            scanf("%f", &valor);
-            resultado = segundosParaMinutos(valor);
-            printf("%.2f segundos equivale a %.2f minutos\n", valor, resultado);
+float minutosParaHoras(float minutos) {
+    return minutos / 60;
+}
+
+float horasParaMinutos(float horas) {
+    return horas * 60;
+}
+
+float converterTempo(int unidadeOrigem, int unidadeDestino, float valor) {
+    if (unidadeOrigem == unidadeDestino) {
+        return valor;
+    }
+
+    switch (unidadeOrigem) {
+        case 1: // Segundos
+            if (unidadeDestino == 2) return segundosParaMinutos(valor);
             break;
-        case 2:
-            printf("Digite o valor em Minutos: ");
-            scanf("%f", &valor);
-            resultado = minutosParaSegundos(valor);
-            printf("%.2f minutos equivale a %.2f segundos\n", valor, resultado);
+        case 2: // Minutos
+            if (unidadeDestino == 1) return minutosParaSegundos(valor);
+            if (unidadeDestino == 3) return minutosParaHoras(valor);
             break;
-        case 3:
-            printf("Digite o valor em Minutos: ");
-            scanf("%f", &valor);
-            resultado = minutosParaHoras(valor);
-            printf("%.2f minutos equivale a %.2f horas\n", valor, resultado);
-            break;
-        case 4:
-            printf("Digite o valor em Horas: ");
-            scanf("%f", &valor);
-            resultado = horasParaMinutos(valor);
-            printf("%.2f horas equivale a %.2f minutos\n", valor, resultado);
-            break;
-        default:
-            printf("Opção inválida!\n");
+        case 3: // Horas
+            if (unidadeDestino == 2) return horasParaMinutos(valor);
             break;
     }
+
+    // Caso a combinação não seja válida
+    return -1; // Indica erro
 }

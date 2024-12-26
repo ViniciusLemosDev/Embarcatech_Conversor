@@ -135,43 +135,40 @@ int main()
                 getchar(); // Aguarda Enter
                 break;
 
-                        case 8: // Unidades de Tempo
-            printf("\nEscolha a conversão de tempo:\n");
-            printf("1 - Segundos para Minutos\n");
-            printf("2 - Minutos para Segundos\n");
-            printf("3 - Minutos para Horas\n");
-            printf("4 - Horas para Minutos\n");
-            scanf("%d", &unidadeOrigem);
+            case 8: // Unidades de Tempo
+                printf("\nEscolha a unidade de origem:\n");
+                printf("1 - Segundos\n");
+                printf("2 - Minutos\n");
+                printf("3 - Horas\n");
+                scanf("%d", &unidadeOrigem);
 
-            printf("Digite o valor a ser convertido:\n");
-            scanf("%lf", &valor);
+                printf("Escolha a unidade de destino:\n");
+                printf("1 - Segundos\n");
+                printf("2 - Minutos\n");
+                printf("3 - Horas\n");
+                scanf("%d", &unidadeDestino);
 
-            switch (unidadeOrigem) {
-                case 1:
-                    resultado = segundosParaMinutos(valor);
-                    printf("%.2f segundos equivale a %.2f minutos\n", valor, resultado);
+                if (unidadeOrigem < 1 || unidadeOrigem > 3 || unidadeDestino < 1 || unidadeDestino > 3) {
+                    printf("Unidade inválida! Tente novamente.\n");
                     break;
-                case 2:
-                    resultado = minutosParaSegundos(valor);
-                    printf("%.2f minutos equivale a %.2f segundos\n", valor, resultado);
-                    break;
-                case 3:
-                    resultado = minutosParaHoras(valor);
-                    printf("%.2f minutos equivale a %.2f horas\n", valor, resultado);
-                    break;
-                case 4:
-                    resultado = horasParaMinutos(valor);
-                    printf("%.2f horas equivale a %.2f minutos\n", valor, resultado);
-                    break;
-                default:
-                    printf("Opção inválida para conversão de tempo!\n");
-                    break;
-            }
+                }
 
-            printf("Pressione Enter para continuar...\n");
-            while (getchar() != '\n'); // Limpa buffer
-            getchar(); // Aguarda Enter
-            break;
+                printf("Digite o valor a ser convertido:\n");
+                scanf("%lf", &valor);
+
+                resultado = converterTempo(unidadeOrigem, unidadeDestino, valor);
+
+                if (resultado >= 0) {
+                    printf("O resultado da conversão é: %.2f\n", resultado);
+                } else {
+                    printf("Conversão inválida!\n");
+                }
+
+                printf("Pressione Enter para continuar...\n");
+                while (getchar() != '\n'); // Limpa buffer
+                getchar(); // Aguarda Enter
+                break;
+
 
                     
             case 9:  // Unidades de memória
