@@ -2,6 +2,5 @@
 #define TEMPO_H
 
 double tempo(int unidadeOrigem, int unidadeDestino, double valor);
-void executarConversaoTempo();
 
 #endif
