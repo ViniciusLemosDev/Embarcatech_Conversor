@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "massa.h": "c"
+        "massa.h": "c",
+        "locale.h": "c",
+        "energia.h": "c"
     }
 }
