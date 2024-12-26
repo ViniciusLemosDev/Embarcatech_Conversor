@@ -1,4 +1,4 @@
-# EmbarcatechConversor
+# Embarcatech-Conversor de Unidades
 
 Este projeto é um conversor de unidades desenvolvido em C, que permite converter valores entre diferentes unidades de medida.
 
