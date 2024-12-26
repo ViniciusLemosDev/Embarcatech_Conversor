@@ -13,6 +13,8 @@
 #include "area.h"
 #include "energia.c"
 #include "energia.h"
+#include "Temperatura.c"
+#include "Temperatura.h"
 
 int main()
 {
@@ -141,6 +143,26 @@ int main()
             getchar(); // Aguarda Enter
             break;
 
+         case 4: // Unidades de Temperatura
+                printf("Digite a unidade de origem (1. Celsius, 2. Fahrenheit, 3. Kelvin):\n");
+                scanf("%d", &unidadeOrigem);
+
+                printf("Digite a unidade de destino (1. Celsius, 2. Fahrenheit, 3. Kelvin):\n");
+                scanf("%d", &unidadeDestino);
+
+                printf("Digite o valor a ser convertido:\n");
+                scanf("%lf", &valor);
+
+                resultado = temperatura(unidadeOrigem, unidadeDestino, valor);
+                
+                printf("O resultado da conversão é: %.3lf\n", resultado);
+
+                printf("Pressione Enter para continuar...\n");
+                while (getchar() != '\n')
+                    ; // Limpa o buffer
+                getchar(); // Aguarda Enter
+                break;
+
         case 5:
             printf("\nDigite o número da unidade de origem (0. km/h, 1. m/s, 2. mph):\n");
             scanf("%d", &unidadeOrigem);
@@ -150,7 +172,9 @@ int main()
 
             printf("Digite o valor a ser convertido:\n");
             scanf("%lf", &valor);
+
             resultado = converterVelocidade(valor, unidadeOrigem, unidadeDestino);
+
             printf("O resultado da conversão é: %.3lf\n", resultado);
 
             printf("Pressione Enter para continuar...\n");
@@ -183,10 +207,10 @@ int main()
 
         case 7: // unidade Área
 
-            printf("Digite a unidade de origem(1- metros quadrados; 2 - centí­metros quadrados)\n");
+            printf("Digite a unidade de origem(1- metros quadrados; 2 - centímetros quadrados)\n");
             scanf("%d", &unidadeOrigem);
 
-            printf("Digite a unidade de destino(1- metros quadrados; 2- centí­metros quadrados)\n");
+            printf("Digite a unidade de destino(1- metros quadrados; 2- centímetros quadrados)\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido: \n");

@@ -2,6 +2,7 @@
     "files.associations": {
         "massa.h": "c",
         "locale.h": "c",
-        "energia.h": "c"
+        "energia.h": "c",
+        "TEMPERATURA.C": "cpp"
     }
 }
