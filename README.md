@@ -55,6 +55,7 @@ Para obter o código-fonte do projeto, clone o repositório do GitHub:
 
 ```bash
 git clone https://github.com/ViniciusLemosDev/Embarcatech_Conversor.git
+```
 
 ## Compilando e Executando o Projeto
 
