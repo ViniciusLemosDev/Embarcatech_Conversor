@@ -1,76 +1,68 @@
 #include <stdio.h>
+#include "temperatura.h"
+#include "locale.h"
 
-void celsiusParaFahrenheit(float celsius) {
-    float fahrenheit = (celsius * 9/5) + 32;
-    printf("%.2f Â°C = %.2f Â°F\n", celsius, fahrenheit);
-}
+double temperatura(int unidadeOrigem, int unidadeDestino, double valor)
+{
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    double resultado = 0.0;
 
-void celsiusParaKelvin(float celsius) {
-    float kelvin = celsius + 273.15;
-    printf("%.2f Â°C = %.2f K\n", celsius, kelvin);
-}
-
-void fahrenheitParaCelsius(float fahrenheit) {
-    float celsius = (fahrenheit - 32) * 5/9;
-    printf("%.2f Â°F = %.2f Â°C\n", fahrenheit, celsius);
-}
-
-void fahrenheitParaKelvin(float fahrenheit) {
-    float kelvin = (fahrenheit - 32) * 5/9 + 273.15;
-    printf("%.2f Â°F = %.2f K\n", fahrenheit, kelvin);
-}
-
-void kelvinParaCelsius(float kelvin) {
-    float celsius = kelvin - 273.15;
-    printf("%.2f K = %.2f Â°C\n", kelvin, celsius);
-}
-
-void kelvinParaFahrenheit(float kelvin) {
-    float fahrenheit = (kelvin - 273.15) * 9/5 + 32;
-    printf("%.2f K = %.2f Â°F\n", kelvin, fahrenheit);
-}
-
-int main() {
-    int escolha;
-    float temperatura;
-
-    printf("Escolha a conversÃ£o:\n");
-    printf("1. Celsius para Fahrenheit\n");
-    printf("2. Celsius para Kelvin\n");
-    printf("3. Fahrenheit para Celsius\n");
-    printf("4. Fahrenheit para Kelvin\n");
-    printf("5. Kelvin para Celsius\n");
-    printf("6. Kelvin para Fahrenheit\n");
-    printf("Digite sua escolha (1-6): ");
-    scanf("%d", &escolha);
-
-    printf("Digite a temperatura: ");
-    scanf("%f", &temperatura);
-
-    switch (escolha) {
+    switch (unidadeOrigem) {
+    case 1: // Celsius
+        switch (unidadeDestino) {
         case 1:
-            celsiusParaFahrenheit(temperatura);
+            printf("A unidade informada é a mesma da origem!\n");
+            return -1; 
+        case 2: // Celsius para Fahrenheit
+            resultado = (valor * 9/5) + 32;
             break;
-        case 2:
-            celsiusParaKelvin(temperatura);
-            break;
-        case 3:
-            fahrenheitParaCelsius(temperatura);
-            break;
-        case 4:
-            fahrenheitParaKelvin(temperatura);
-            break;
-        case 5:
-            kelvinParaCelsius(temperatura);
-            break;
-        case 6:
-            kelvinParaFahrenheit(temperatura);
+        case 3: // Celsius para Kelvin
+            resultado = valor + 273.15;
             break;
         default:
-            printf("Escolha invÃ¡lida!\n");
+            printf("Conversão inválida!\n");
+            return -1;
+        }
+        break;
+
+    case 2: // Fahrenheit
+        switch (unidadeDestino) {
+        case 1: // Fahrenheit para Celsius
+            resultado = (valor - 32) * 5/9;
             break;
+        case 2:
+            printf("A unidade informada é a mesma da origem!\n");
+            return -1;
+        case 3: // Fahrenheit para Kelvin
+            resultado = (valor - 32) * 5/9 + 273.15;
+            break;
+        default:
+            printf("Conversão inválida!\n");
+            return -1;
+        }
+        break;
+
+    case 3: // Kelvin
+        switch (unidadeDestino) {
+        case 1: // Kelvin para Celsius
+            resultado = valor - 273.15;
+            break;
+        case 2: // Kelvin para Fahrenheit
+            resultado = (valor - 273.15) * 9/5 + 32;
+            break;
+        case 3:
+            printf("A unidade informada é a mesma da origem!\n");
+            return -1;
+        default:
+            printf("Conversão inválida!\n");
+            return -1;
+        }
+        break;
+
+    default:
+        printf("Conversão inválida!\n");
+        return -1;
     }
 
-    return 0;
+    return resultado;
 }
-
