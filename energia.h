@@ -1,6 +1,6 @@
 #ifndef ENERGIA_H
 #define ENERGIA_H
-    verificarenegia(int UnidadeOrigem,int UnidadeDestino);
+    int verificarenegia(int UnidadeOrigem,int UnidadeDestino);
     double energia(int unidadeOrigem, int unidadeDestino, double valor);
 
     const double fatoresConversao[3][3] = {
