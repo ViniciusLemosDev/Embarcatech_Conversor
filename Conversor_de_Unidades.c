@@ -7,6 +7,8 @@
 #include "Memoria.h"
 #include "comprimento.h"
 #include "velocidade.c"
+#include "energia.c"
+#include "energia.h"
 
 int main()
 {
@@ -132,6 +134,29 @@ int main()
                 while (getchar() != '\n');      // Limpa buffer
                 getchar(); // Aguarda Enter
                 break;
+            case 6: //unidade de energia
+            //entrada dados
+                printf("Escolha a unidade de origem\n1.Watt\n2.Quilowatts\n3.Cavalo-Vapor\n");
+                scanf("%d", &unidadeOrigem); 
+                printf("Escolha a unidade de destino\n1.Watt\n2.Quilowatts\n3.Cavalo-Vapor\n");
+                scanf("%d", &unidadeDestino);
+                //verificação de erro
+                if(verificarenergia(unidadeOrigem,unidadeDestino)==1){
+                    printf("Erro - A conversão não pode ser realizada\n Verifique as opções inseridas\n");
+                    getchar();
+                    break;
+                }
+                //valor de entrada
+                printf("Digite o valor a ser convertido:\n");
+                scanf("%lf", &valor);
+                //valor de saída
+                resultado = energia(unidadeOrigem, unidadeDestino, valor);
+                printf("Resultado da conversão: %.4lf\n", resultado);
+                getchar(); // Aguarda Enter
+                break;
+
+                
+
 
             case 9:  // Unidades de mem�ria
                 
