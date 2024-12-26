@@ -11,7 +11,7 @@ int verificarenergia(int unidadeOrigem, int unidadeDestino)
 return verificar;
 }
 double energia(int unidadeOrigem, int unidadeDestino, double valor ){
-    valorenergia = valor*fatoresConversaoenergia[unidadeOrigem][unidadeDestino];
+    valorenergia = valor*fatoresConversaoenergia[unidadeOrigem -1][unidadeDestino - 1];
     return valorenergia;
 }
     
