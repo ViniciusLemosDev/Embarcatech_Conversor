@@ -89,10 +89,10 @@ int main()
 
 
             case 3: // Unidades de Volume
-                printf("Digite a unidade de origem (1. litro, 2. mililitro, 3. metro cï¿½bico):\n");
+                printf("Digite a unidade de origem (1. litro, 2. mililitro, 3. metro cúbico):\n");
                 scanf("%d", &unidadeOrigem);
 
-                printf("Digite a unidade de destino (1. litro, 2. mililitro, 3. metro cï¿½bico):\n");
+                printf("Digite a unidade de destino (1. litro, 2. mililitro, 3. metro cúbico):\n");
                 scanf("%d", &unidadeDestino);
 
                 printf("Digite o valor a ser convertido:\n");
@@ -136,40 +136,11 @@ int main()
                 break;
 
             case 8: // Unidades de Tempo
-                printf("\nEscolha a unidade de origem:\n");
-                printf("1 - Segundos\n");
-                printf("2 - Minutos\n");
-                printf("3 - Horas\n");
-                scanf("%d", &unidadeOrigem);
-
-                printf("Escolha a unidade de destino:\n");
-                printf("1 - Segundos\n");
-                printf("2 - Minutos\n");
-                printf("3 - Horas\n");
-                scanf("%d", &unidadeDestino);
-
-                if (unidadeOrigem < 1 || unidadeOrigem > 3 || unidadeDestino < 1 || unidadeDestino > 3) {
-                    printf("Unidade inválida! Tente novamente.\n");
-                    break;
-                }
-
-                printf("Digite o valor a ser convertido:\n");
-                scanf("%lf", &valor);
-
-                resultado = converterTempo(unidadeOrigem, unidadeDestino, valor);
-
-                if (resultado >= 0) {
-                    printf("O resultado da conversão é: %.2f\n", resultado);
-                } else {
-                    printf("Conversão inválida!\n");
-                }
-
+                executarConversaoTempo();
                 printf("Pressione Enter para continuar...\n");
                 while (getchar() != '\n'); // Limpa buffer
                 getchar(); // Aguarda Enter
                 break;
-
-
                     
             case 9:  // Unidades de memória
                 
@@ -181,7 +152,7 @@ int main()
 
                 if (unidadeOrigem == unidadeDestino)
                 {
-                    printf("Conversão inválida! Vocï¿½ nï¿½o pode escolher a mesma unidade para a origem e destino!\n");
+                    printf("Conversão inválida! Você não pode escolher a mesma unidade para a origem e destino!\n");
                     return -1;
                 }
 

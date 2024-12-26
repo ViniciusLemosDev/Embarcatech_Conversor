@@ -1,39 +1,44 @@
+#include <stdio.h>
 #include "tempo.h"
 
-float segundosParaMinutos(float segundos) {
-    return segundos / 60;
-}
+// Fun√ß√£o principal para realizar a convers√£o
+void executarConversaoTempo() {
+    int unidadeOrigem, unidadeDestino;
+    float valor, resultado;
 
-float minutosParaSegundos(float minutos) {
-    return minutos * 60;
-}
+    printf("\n=== Conversor de Unidades de Tempo ===\n");
+    printf("Escolha a unidade de origem:\n");
+    printf("1 - Segundos\n");
+    printf("2 - Minutos\n");
+    printf("3 - Horas\n");
+    scanf("%d", &unidadeOrigem);
 
-float minutosParaHoras(float minutos) {
-    return minutos / 60;
-}
+    printf("Escolha a unidade de destino:\n");
+    printf("1 - Segundos\n");
+    printf("2 - Minutos\n");
+    printf("3 - Horas\n");
+    scanf("%d", &unidadeDestino);
 
-float horasParaMinutos(float horas) {
-    return horas * 60;
-}
-
-float converterTempo(int unidadeOrigem, int unidadeDestino, float valor) {
-    if (unidadeOrigem == unidadeDestino) {
-        return valor;
+    if (unidadeOrigem < 1 || unidadeOrigem > 3 || unidadeDestino < 1 || unidadeDestino > 3) {
+        printf("Unidade inv√°lida! Tente novamente.\n");
+        return;
     }
 
-    switch (unidadeOrigem) {
-        case 1: // Segundos
-            if (unidadeDestino == 2) return segundosParaMinutos(valor);
-            break;
-        case 2: // Minutos
-            if (unidadeDestino == 1) return minutosParaSegundos(valor);
-            if (unidadeDestino == 3) return minutosParaHoras(valor);
-            break;
-        case 3: // Horas
-            if (unidadeDestino == 2) return horasParaMinutos(valor);
-            break;
+    printf("Digite o valor a ser convertido:\n");
+    scanf("%f", &valor);
+
+    // Processa as convers√µes
+    if (unidadeOrigem == 1 && unidadeDestino == 2) {
+        resultado = segundosParaMinutos(valor);
+    } else if (unidadeOrigem == 2 && unidadeDestino == 1) {
+        resultado = minutosParaSegundos(valor);
+    } else if (unidadeOrigem == 2 && unidadeDestino == 3) {
+        resultado = minutosParaHoras(valor);
+    } else if (unidadeOrigem == 3 && unidadeDestino == 2) {
+        resultado = horasParaMinutos(valor);
+    } else {
+        resultado = valor; // Mesma unidade
     }
 
-    // Caso a combinaÁ„o n„o seja v·lida
-    return -1; // Indica erro
+    printf("O resultado da convers√£o √©: %.2f\n", resultado);
 }
