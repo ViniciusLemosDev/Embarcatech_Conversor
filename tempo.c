@@ -21,12 +21,12 @@ int main() {
     float valor, resultado;
 
     printf("=== Conversor de Unidades de Tempo ===\n");
-    printf("Escolha uma convers√£o:\n");
+    printf("Escolha uma convers„o:\n");
     printf("1 - Segundos para Minutos\n");
     printf("2 - Minutos para Segundos\n");
     printf("3 - Minutos para Horas\n");
     printf("4 - Horas para Minutos\n");
-    printf("Digite a opcao desejada: ");
+    printf("Digite a opc„o desejada: ");
     scanf("%d", &opcao);
 
     switch (opcao) {
