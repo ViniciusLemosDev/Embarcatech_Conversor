@@ -1,22 +1,8 @@
 #include <stdio.h>
+#include "tempo.h"
 
-float segundosParaMinutos(float segundos) {
-    return segundos / 60;
-}
-
-float minutosParaSegundos(float minutos) {
-    return minutos * 60;
-}
-
-float minutosParaHoras(float minutos) {
-    return minutos / 60;
-}
-
-float horasParaMinutos(float horas) {
-    return horas * 60;
-}
-
-int main() {
+// Função principal para executar as conversões
+void executarConversao() {
     int opcao;
     float valor, resultado;
 
@@ -26,7 +12,7 @@ int main() {
     printf("2 - Minutos para Segundos\n");
     printf("3 - Minutos para Horas\n");
     printf("4 - Horas para Minutos\n");
-    printf("Digite a opcão desejada: ");
+    printf("Digite a opção desejada: ");
     scanf("%d", &opcao);
 
     switch (opcao) {
@@ -55,9 +41,7 @@ int main() {
             printf("%.2f horas equivale a %.2f minutos\n", valor, resultado);
             break;
         default:
-            printf("Opcao invalida!\n");
+            printf("Opção inválida!\n");
             break;
     }
-
-    return 0;
 }
