@@ -13,6 +13,8 @@
 #include "area.h"
 #include "energia.c"
 #include "energia.h"
+#include "tempo.c"
+#include "tempo.h"
 
 int main()
 {
@@ -183,10 +185,10 @@ int main()
 
         case 7: // unidade Área
 
-            printf("Digite a unidade de origem(1- metros quadrados; 2 - centí­metros quadrados)\n");
+            printf("Digite a unidade de origem(1- metros quadrados; 2 - centímetros quadrados)\n");
             scanf("%d", &unidadeOrigem);
 
-            printf("Digite a unidade de destino(1- metros quadrados; 2- centí­metros quadrados)\n");
+            printf("Digite a unidade de destino(1- metros quadrados; 2- centímetros quadrados)\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido: \n");
@@ -201,6 +203,33 @@ int main()
             getchar(); // Aguarda Enter
             break;
 
+        case 8: // Unidades de Tempo
+                printf("Digite a unidade de origem (1. Segundos, 2. Minutos, 3. Horas):\n");
+                scanf("%d", &unidadeOrigem);
+
+                printf("Digite a unidade de destino (1. Segundos, 2. Minutos, 3. Horas):\n");
+                scanf("%d", &unidadeDestino);
+
+                if (unidadeOrigem == unidadeDestino) {
+                    printf("Conversão inválida! Você não pode escolher a mesma unidade para origem e destino.\n");
+                    break;
+                }
+
+                printf("Digite o valor a ser convertido:\n");
+                scanf("%lf", &valor);
+
+                resultado = tempo(unidadeOrigem, unidadeDestino, valor);
+
+                if (resultado >= 0) {
+                    printf("O resultado da conversão é: %.3lf\n", resultado);
+                } else {
+                    printf("Conversão inválida!\n");
+                }
+
+                printf("Pressione Enter para continuar...\n");
+                while (getchar() != '\n'); // Limpa buffer
+                getchar(); // Aguarda Enter
+                break;
 
         case 9: // Unidades de memória
 
