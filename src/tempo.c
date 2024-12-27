@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "tempo.h"
+#include "../headers/tempo.h"
 #include <locale.h>
 
 double tempo(int unidadeOrigem, int unidadeDestino, double valor) {
@@ -10,7 +10,8 @@ double tempo(int unidadeOrigem, int unidadeDestino, double valor) {
         case 1: // Segundos
             switch (unidadeDestino) {
                 case 1:
-                    printf("A unidade informada √© a mesma da origem!\n");
+                    resultado = valor = valor;
+                    printf("A unidade informada È a mesma da origem!\n");
                     break;
                 case 2:
                     resultado = valor / 60.0; // Segundos para Minutos
@@ -19,7 +20,7 @@ double tempo(int unidadeOrigem, int unidadeDestino, double valor) {
                     resultado = valor / 3600.0; // Segundos para Horas (60 * 60)
                     break;
                 default:
-                    printf("Convers√£o inv√°lida!\n");
+                    printf("Convers„o inv·lida!\n");
                     return -1; // Retorna -1 para indicar erro
             }
             break;
@@ -30,13 +31,14 @@ double tempo(int unidadeOrigem, int unidadeDestino, double valor) {
                     resultado = valor * 60.0; // Minutos para Segundos
                     break;
                 case 2:
-                    printf("A unidade informada √© a mesma da origem!\n");
+                    resultado = valor = valor;
+                    printf("A unidade informada È a mesma da origem!\n");
                     break;
                 case 3:
                     resultado = valor / 60.0; // Minutos para Horas
                     break;
                 default:
-                    printf("Convers√£o inv√°lida!\n");
+                    printf("Convers„o inv·lida!\n");
                     return -1;
             }
             break;
@@ -50,16 +52,17 @@ double tempo(int unidadeOrigem, int unidadeDestino, double valor) {
                     resultado = valor * 60.0; // Horas para Minutos
                     break;
                 case 3:
-                    printf("A unidade informada √© a mesma da origem!\n");
+                    resultado = valor = valor;
+                    printf("A unidade informada È a mesma da origem!\n");
                     break;
                 default:
-                    printf("Convers√£o inv√°lida!\n");
+                    printf("Convers„o inv·lida!\n");
                     return -1;
             }
             break;
 
         default:
-            printf("Convers√£o inv√°lida!\n");
+            printf("Convers„o inv·lida!\n");
             return -1;
     }
 

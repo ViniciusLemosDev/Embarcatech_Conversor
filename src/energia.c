@@ -1,4 +1,4 @@
-#include "energia.h"
+#include "../headers/energia.h"
 #include "locale.h"
 int verificar=0;
 double valorenergia = 0 ;

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "area.h"
+#include "../headers/area.h"
 #include "locale.h"
 
 // 1 m = 10000 cm
@@ -11,7 +11,7 @@ double converte_area(int unidadeOrigem, int unidadeDestino, double valor)
 
     if (valor < 0)
     {
-        printf("Valor de  rea inv lido (deve ser positivo).\n");
+        printf("Valor de área inválido (deve ser positivo).\n");
         return -1;
     }
 
@@ -21,7 +21,8 @@ double converte_area(int unidadeOrigem, int unidadeDestino, double valor)
         switch (unidadeDestino)
         {
         case 1:
-            printf("A unidade informada   a mesma da origem!\n");
+            resultado = valor = valor;
+            printf("A unidade informada é a mesma da origem!\n");
             break;
 
         case 2:
@@ -30,7 +31,7 @@ double converte_area(int unidadeOrigem, int unidadeDestino, double valor)
             break;
 
         default:
-            printf("Convers o inv lida!\n");
+            printf("Conversão inválida!\n");
             return -1;
         }
         break;
@@ -43,16 +44,17 @@ double converte_area(int unidadeOrigem, int unidadeDestino, double valor)
             break;
 
         case 2:
-            printf("A unidade informada   a mesma da origem!\n");
+            resultado = valor = valor;
+            printf("A unidade informada é a mesma da origem!\n");
             break;
 
         default:
-            printf("Convers o inv lida!\n");
+            printf("Conversão inválida!\n");
             return -1;
         }
         break;
     default:
-        printf("Convers o inv lida!\n");
+        printf("Conversão inválida!\n");
         return -1;
     }
     return resultado;

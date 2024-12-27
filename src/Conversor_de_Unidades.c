@@ -1,23 +1,25 @@
 #include <stdio.h>
 #include <locale.h>
+
 #include "volume.c"
-#include "volume.h"
 #include "massa.c"
-#include "massa.h"
 #include "velocidade.c"
-#include "velocidade.h"
 #include "Imc.c"
-#include "Imc.h"
 #include "Area.c"
-#include "area.h"
 #include "energia.c"
-#include "energia.h"
 #include "tempo.c"
-#include "tempo.h"
 #include "Temperatura.c"
-#include "Temperatura.h"
-#include "Memoria.h"
-#include "comprimento.h"
+
+#include "../headers/volume.h"
+#include "../headers/massa.h"
+#include "../headers/velocidade.h"
+#include "../headers/Imc.h"
+#include "../headers/area.h"
+#include "../headers/energia.h"
+#include "../headers/tempo.h"
+#include "../headers/Temperatura.h"
+#include "../headers/Memoria.h"
+#include "../headers/comprimento.h"
 
 int main()
 {
@@ -38,7 +40,7 @@ int main()
                "7 - Unidades de Área\n"
                "8 - Unidades de Tempo\n"
                "9 - Unidades de Memória\n"
-               "10 - Calculo do IMC\n"
+               "10 - Cálculo do IMC\n"
                "0 - Para sair!\n");
 
         scanf("%d", &tipoUnidade);
@@ -208,12 +210,12 @@ int main()
                 break;
 
 
-        case 7: // unidade área
+        case 7: // unidade Área
 
-            printf("Digite a unidade de origem(1. metros quadrados, 2. centímetros quadrados):\n");
+            printf("Digite a unidade de origem (1. metros quadrados, 2. centímetros quadrados):\n");
             scanf("%d", &unidadeOrigem);
 
-            printf("Digite a unidade de destino(1. metros quadrados, 2. centímetros quadrados):\n");
+            printf("Digite a unidade de destino (1. metros quadrados, 2. centímetros quadrados):\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido: \n");
@@ -266,7 +268,7 @@ int main()
                 getchar(); // Aguarda Enter
                 break;
 
-        case 9: // Unidades de mem?ria
+        case 9: // Unidades de memória
 
             printf("Digite a unidade de origem \n1. Bits\n2. Bytes\n3. KB\n4. MB\n5. GB\n6. TB\n");
             scanf("%d", &unidadeOrigem);
@@ -277,7 +279,7 @@ int main()
             if (unidadeOrigem == unidadeDestino)
             {
                 printf("Conversão inválida! Você não pode escolher a mesma unidade para a origem e destino!\n");
-                return -1;
+                break;
             }
 
             printf("Digite o valor a ser convertido:\n");

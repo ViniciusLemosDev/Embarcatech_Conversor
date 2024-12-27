@@ -1,72 +1,68 @@
-#ifndef COMPRIMENTO_H
-#define COMPRIMENTO_H
-
 #include <stdio.h>
+#include "../headers/volume.h"
 
-static double comprimento(int unidadeOrigem, int unidadeDestino, double valor) {
+double Volume(int unidadeOrigem, int unidadeDestino, double valor) {
     double resultado = 0.0;
 
     switch (unidadeOrigem) {
-        case 1: // Metros como origem
+        case 1: // Litros como origem
             switch (unidadeDestino) {
                 case 1:
                     resultado = valor = valor;
-                    printf("A unidade informada √© a mesma da origem!\n"); // m -> m
+                    printf("A unidade informada È a mesma da origem!\n");
                     break;
                 case 2:
-                    resultado = valor * 100.0; // m -> cm
+                    resultado = valor * 1000.0; // Litros -> Mililitros
                     break;
                 case 3:
-                    resultado = valor * 1000.0; // m -> mm
+                    resultado = valor / 1000.0; // Litros -> Metros cÔøΩbicos
                     break;
                 default:
-                    printf("Convers√£o inv√°lida!\n");
+                    printf("Convers„o inv·lida!\n");
                     return -1;
             }
             break;
 
-        case 2: // Cent√≠metros como origem
+        case 2: // Mililitros como origem
             switch (unidadeDestino) {
                 case 1:
-                    resultado = valor / 100.0; // cm -> m
+                    resultado = valor / 1000.0; // Mililitros -> Litros
                     break;
                 case 2:
                     resultado = valor = valor;
-                    printf("A unidade informada √© a mesma da origem!\n"); // cm -> cm
+                    printf("A unidade informada È a mesma da origem!\n");
                     break;
                 case 3:
-                    resultado = valor * 10.0; // cm -> mm
+                    resultado = valor / 1e6; // Mililitros -> Metros cÔøΩbicos
                     break;
                 default:
-                    printf("Convers√£o inv√°lida!\n");
+                    printf("Convers„o inv·lida!\n");
                     return -1;
             }
             break;
 
-        case 3: // Mil√≠metros como origem
+        case 3: // Metros c√∫bicos como origem
             switch (unidadeDestino) {
                 case 1:
-                    resultado = valor / 1000.0; // mm -> m
+                    resultado = valor * 1000.0; // Metros cÔøΩbicos -> Litros
                     break;
                 case 2:
-                    resultado = valor / 10.0; // mm -> cm
+                    resultado = valor * 1e6; // Metros cÔøΩbicos -> Mililitros
                     break;
                 case 3:
                     resultado = valor = valor;
-                    printf("A unidade informada √© a mesma da origem!\n"); // mm -> mm
+                    printf("A unidade informada È a mesma da origem!\n");
                     break;
                 default:
-                    printf("Convers√£o inv√°lida!\n");
+                    printf("Convers„o inv·lida!\n");
                     return -1;
             }
             break;
 
         default:
-            printf("Convers√£o inv√°lida!\n");
+            printf("Convers„o inv·lida!\n");
             return -1;
     }
 
     return resultado;
 }
-
-#endif

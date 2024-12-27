@@ -3,6 +3,14 @@
         "massa.h": "c",
         "locale.h": "c",
         "energia.h": "c",
-        "TEMPERATURA.C": "cpp"
+        "TEMPERATURA.C": "cpp",
+        "volume.h": "c",
+        "velocidade.h": "c",
+        "imc.h": "c",
+        "area.h": "c",
+        "tempo.h": "c",
+        "temperatura.h": "c",
+        "memoria.h": "c",
+        "comprimento.h": "c"
     }
 }
