@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <locale.h>
-#include "volume.h"
 #include "volume.c"
+#include "volume.h"
 #include "massa.c"
 #include "massa.h"
-#include "Memoria.h"
-#include "comprimento.h"
 #include "velocidade.c"
-#include "Imc.h"
+#include "velocidade.H"
 #include "Imc.c"
+#include "Imc.h"
 #include "Area.c"
 #include "area.h"
 #include "energia.c"
@@ -17,6 +16,8 @@
 #include "tempo.h"
 #include "Temperatura.c"
 #include "Temperatura.h"
+#include "Memoria.h"
+#include "comprimento.h"
 
 int main()
 {
@@ -37,7 +38,7 @@ int main()
                "7 - Unidades de Área\n"
                "8 - Unidades de Tempo\n"
                "9 - Unidades de Memória\n"
-               "10 - Calculo do Imc\n"
+               "10 - Calculo do IMC\n"
                "0 - Para sair!\n");
 
         scanf("%d", &tipoUnidade);
@@ -46,10 +47,10 @@ int main()
         {
         case 1: // Unidades de Comprimento
 
-            printf("Digite a unidade de origem (1. metro, 2. cent?metro, 3. mil?metro):\n");
+            printf("Digite a unidade de origem (1. metro, 2. centímetro, 3. milímetro):\n");
             scanf("%d", &unidadeOrigem);
 
-            printf("Digite a unidade de destino (1. metro, 2. cent?metro, 3. mil?metro):\n");
+            printf("Digite a unidade de destino (1. metro, 2. centímetro, 3. milímetro):\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido:\n");
@@ -61,11 +62,11 @@ int main()
             {
                 if ((unidadeOrigem == 1 && unidadeDestino == 2) || (unidadeOrigem == 2 && unidadeDestino == 3))
                 {
-                    printf("O resultado da convers?o ?: %.3lf\n", resultado);
+                    printf("O resultado da conversão é: %.3lf\n", resultado);
                 }
                 else
                 {
-                    printf("O resultado da convers?o ?: %.3lf\n", resultado);
+                    printf("O resultado da conversão é: %.3lf\n", resultado);
                 }
             }
             printf("Pressione Enter para continuar...\n");
@@ -76,10 +77,10 @@ int main()
 
         case 2: // Unidades de Massa
 
-            printf("\nDigite o n?mero da unidade de origem (1. quilograma, 2. grama, 3. tonelada):\n");
+            printf("\nDigite o número da unidade de origem (1. quilograma, 2. grama, 3. tonelada):\n");
             scanf("%d", &unidadeOrigem);
 
-            printf("Digite o n?mero da unidade de destino (1. quilograma, 2. grama, 3. tonelada):\n");
+            printf("Digite o número da unidade de destino (1. quilograma, 2. grama, 3. tonelada):\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido:\n");
@@ -91,15 +92,15 @@ int main()
             {
                 if ((unidadeOrigem == 1 && unidadeDestino == 3) || (unidadeOrigem == 2 && unidadeDestino == 1))
                 {
-                    printf("O resultado da convers?o ?: %.4lf\n", resultado);
+                    printf("O resultado da conversão é: %.4lf\n", resultado);
                 }
                 else if ((unidadeOrigem == 1 && unidadeDestino == 2) || (unidadeOrigem == 3 && unidadeDestino == 1) || (unidadeOrigem == 3 && unidadeDestino == 2))
                 {
-                    printf("O resultado da convers?o ?: %.2lf\n", resultado);
+                    printf("O resultado da conversão é: %.2lf\n", resultado);
                 }
                 else
                 {
-                    printf("O resultado da convers?o ?: %.6lf\n", resultado);
+                    printf("O resultado da conversão é: %.6lf\n", resultado);
                 }
             }
             
@@ -110,10 +111,10 @@ int main()
             break;
 
         case 3: // Unidades de Volume
-            printf("Digite a unidade de origem (1. litro, 2. mililitro, 3. metro c?bico):\n");
+            printf("Digite a unidade de origem (1. litro, 2. mililitro, 3. metro cúbico):\n");
             scanf("%d", &unidadeOrigem);
 
-            printf("Digite a unidade de destino (1. litro, 2. mililitro, 3. metro c?bico):\n");
+            printf("Digite a unidade de destino (1. litro, 2. mililitro, 3. metro cúbico):\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido:\n");
@@ -125,17 +126,17 @@ int main()
             {
                 if ((unidadeOrigem == 1 && unidadeDestino == 3) || (unidadeOrigem == 2 && unidadeDestino == 1))
                 {
-                    printf("O resultado da convers?o ?: %.4lf\n", resultado);
+                    printf("O resultado da conversão é: %.4lf\n", resultado);
                 }
                 else if ((unidadeOrigem == 1 && unidadeDestino == 2) ||
                          (unidadeOrigem == 3 && unidadeDestino == 1) ||
                          (unidadeOrigem == 3 && unidadeDestino == 2))
                 {
-                    printf("O resultado da convers?o ?: %.2lf\n", resultado);
+                    printf("O resultado da conversão é: %.2lf\n", resultado);
                 }
                 else
                 {
-                    printf("O resultado da convers?o ?: %.6lf\n", resultado);
+                    printf("O resultado da conversão é: %.6lf\n", resultado);
                 }
             }
 
@@ -157,7 +158,7 @@ int main()
 
                 resultado = temperatura(unidadeOrigem, unidadeDestino, valor);
                 
-                printf("O resultado da convers?o ?: %.3lf\n", resultado);
+                printf("O resultado da conversão é: %.3lf\n", resultado);
 
                 printf("Pressione Enter para continuar...\n");
                 while (getchar() != '\n')
@@ -166,10 +167,10 @@ int main()
                 break;
 
         case 5:
-            printf("\nDigite o n?mero da unidade de origem (0. km/h, 1. m/s, 2. mph):\n");
+            printf("\nDigite o número da unidade de origem (0. km/h, 1. m/s, 2. mph):\n");
             scanf("%d", &unidadeOrigem);
             
-            printf("Digite o n?mero da unidade de destino (0. km/h, 1. m/s, 2. mph):\n");
+            printf("Digite o número da unidade de destino (0. km/h, 1. m/s, 2. mph):\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido:\n");
@@ -177,7 +178,7 @@ int main()
 
             resultado = converterVelocidade(valor, unidadeOrigem, unidadeDestino);
 
-            printf("O resultado da convers?o ?: %.3lf\n", resultado);
+            printf("O resultado da conversão é: %.3lf\n", resultado);
 
             printf("Pressione Enter para continuar...\n");
             while (getchar() != '\n')
@@ -185,41 +186,41 @@ int main()
             getchar(); // Aguarda Enter
             break;
 
-            case 6: //unidade de energia
+        case 6: //unidade de energia
             //entrada dados
-                printf("Escolha a unidade de origem\n1.Watt\n2.Quilowatts\n3.Cavalo-Vapor\n");
+                printf("Digite o número da unidade de Origem (1. Watt, 2. Quilowatts, 3. Cavalo-Vapor):\n");
                 scanf("%d", &unidadeOrigem); 
-                printf("Escolha a unidade de destino\n1.Watt\n2.Quilowatts\n3.Cavalo-Vapor\n");
+                printf("Digite o número da unidade de destino (1. Watt, 2. Quilowatts, 3. Cavalo-Vapor):\n");
                 scanf("%d", &unidadeDestino);
-                //verifica??o de erro
+                //verificação de erro
                 if(verificarenergia(unidadeOrigem,unidadeDestino)==1){
-                    printf("Erro - A convers?o n?o pode ser realizada\n Verifique as op??es inseridas\n");
+                    printf("Erro - A conversão não pode ser realizada\n Verifique as opções inseridas\n");
                     getchar();
                     break;
                 }
                 //valor de entrada
                 printf("Digite o valor a ser convertido:\n");
                 scanf("%lf", &valor);
-                //valor de sa?da
+                //valor de saída
                 resultado = energia(unidadeOrigem, unidadeDestino, valor);
-                printf("Resultado da convers?o: %.4lf\n", resultado);
+                printf("O resultado da conversão é: %.4lf\n", resultado);
                 getchar(); // Aguarda Enter
                 break;
 
 
-        case 7: // unidade ?rea
+        case 7: // unidade área
 
-            printf("Digite a unidade de origem(1- metros quadrados; 2 - cent??metros quadrados)\n");
+            printf("Digite a unidade de origem(1. metros quadrados, 2. centímetros quadrados):\n");
             scanf("%d", &unidadeOrigem);
 
-            printf("Digite a unidade de destino(1- metros quadrados; 2- cent?metros quadrados)\n");
+            printf("Digite a unidade de destino(1. metros quadrados, 2. centímetros quadrados):\n");
             scanf("%d", &unidadeDestino);
 
             printf("Digite o valor a ser convertido: \n");
             scanf("%lf", &valor);
 
             resultado = converte_area(unidadeOrigem, unidadeDestino, valor);
-            printf("Resultado da convers?o: %.2lf\n", resultado);
+            printf("O resultado da conversão é: %.2lf\n", resultado);
             
             printf("Pressione Enter para continuar...\n");
             while (getchar() != '\n')
@@ -235,7 +236,7 @@ int main()
                 scanf("%d", &unidadeDestino);
 
                 if (unidadeOrigem == unidadeDestino) {
-                    printf("Convers?o inv?lida! Voc? n?o pode escolher a mesma unidade para origem e destino.\n");
+                    printf("Conversão inválida! Você não pode escolher a mesma unidade para origem e destino.\n");
                     break;
                 }
 
@@ -245,7 +246,7 @@ int main()
                 resultado = tempo(unidadeOrigem, unidadeDestino, valor);
 
                 if (resultado >= 0) {
-                    printf("O resultado da convers?o ?: %.3lf\n", resultado);
+                    printf("O resultado da conversão é: %.3lf\n", resultado);
                 } else {
                     printf("Conversão inválida!\n");
                 }
@@ -265,7 +266,7 @@ int main()
 
             if (unidadeOrigem == unidadeDestino)
             {
-                printf("Convers?o inv?lida! Voc? n?o pode escolher a mesma unidade para a origem e destino!\n");
+                printf("Conversão inválida! Você não pode escolher a mesma unidade para a origem e destino!\n");
                 return -1;
             }
 
@@ -274,7 +275,7 @@ int main()
 
             resultado = memoria(unidadeOrigem, unidadeDestino, valor);
 
-            printf("Resultado da convers?o: %.4lf\n", resultado);
+            printf("O resultado da conversão é: %.4lf\n", resultado);
 
             printf("Pressione Enter para continuar...\n");
             while (getchar() != '\n')
@@ -282,7 +283,7 @@ int main()
             getchar(); // Aguarda Enter
             break;
         
-        case 10: // C?lculo do IMC
+        case 10: // Cálculo do IMC
 
                 printf("Digite o peso (kg):\n");
                 scanf("%lf", &peso);
@@ -292,7 +293,7 @@ int main()
 
                 imc = calcularIMC(peso, altura);
                 
-                printf("O seu IMC ?: %.2lf\n", imc);
+                printf("O resultado da conversão é: %.2lf\n", imc);
                 printf("Pressione Enter para continuar...\n");
                 while (getchar() != '\n');      // Limpa buffer
                 getchar(); // Aguarda Enter
@@ -304,7 +305,7 @@ int main()
 
         default:
 
-            printf("Convers?o inv?lida\n");
+            printf("Conversão inválida\n");
 
             printf("Pressione Enter para continuar...\n");
             while (getchar() != '\n')

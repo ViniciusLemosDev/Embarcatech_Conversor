@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "temperatura.h"
+#include "Temperatura.h"
 #include "locale.h"
 
 double temperatura(int unidadeOrigem, int unidadeDestino, double valor)
@@ -11,7 +11,7 @@ double temperatura(int unidadeOrigem, int unidadeDestino, double valor)
     case 1: // Celsius
         switch (unidadeDestino) {
         case 1:
-            printf("A unidade informada È a mesma da origem!\n");
+            printf("A unidade informada √© a mesma da origem!\n");
             return -1; 
         case 2: // Celsius para Fahrenheit
             resultado = (valor * 9/5) + 32;
@@ -20,7 +20,7 @@ double temperatura(int unidadeOrigem, int unidadeDestino, double valor)
             resultado = valor + 273.15;
             break;
         default:
-            printf("Convers„o inv·lida!\n");
+            printf("Convers√£o inv√°lida!\n");
             return -1;
         }
         break;
@@ -31,13 +31,13 @@ double temperatura(int unidadeOrigem, int unidadeDestino, double valor)
             resultado = (valor - 32) * 5/9;
             break;
         case 2:
-            printf("A unidade informada È a mesma da origem!\n");
+            printf("A unidade informada √© a mesma da origem!\n");
             return -1;
         case 3: // Fahrenheit para Kelvin
             resultado = (valor - 32) * 5/9 + 273.15;
             break;
         default:
-            printf("Convers„o inv·lida!\n");
+            printf("Convers√£o inv√°lida!\n");
             return -1;
         }
         break;
@@ -51,16 +51,16 @@ double temperatura(int unidadeOrigem, int unidadeDestino, double valor)
             resultado = (valor - 273.15) * 9/5 + 32;
             break;
         case 3:
-            printf("A unidade informada È a mesma da origem!\n");
+            printf("A unidade informada √© a mesma da origem!\n");
             return -1;
         default:
-            printf("Convers„o inv·lida!\n");
+            printf("Convers√£o inv√°lida!\n");
             return -1;
         }
         break;
 
     default:
-        printf("Convers„o inv·lida!\n");
+        printf("Convers√£o inv√°lida!\n");
         return -1;
     }
 

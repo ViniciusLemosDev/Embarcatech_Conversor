@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <locale.h>
 #include "tempo.h"
+#include <locale.h>
 
 double tempo(int unidadeOrigem, int unidadeDestino, double valor) {
     setlocale(LC_ALL, "Portuguese_Brazil"); // Define o locale para português (opcional, mas recomendado)

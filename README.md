@@ -13,6 +13,7 @@ Este projeto é um conversor de unidades desenvolvido em C, que permite converte
 7. Unidades de área (metro quadrado, centímetro quadrado)
 8. Unidades de tempo (segundos, minutos, horas)
 9. Bits, bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), terabytes (TB)
+10. Cálculo do índice de massa corporal (IMC)
 
 ## Pré-requisitos
 
