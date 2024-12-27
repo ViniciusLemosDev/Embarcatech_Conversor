@@ -11,10 +11,10 @@ double Volume(int unidadeOrigem, int unidadeDestino, double valor) {
                     resultado = valor * 1000.0; // Litros -> Mililitros
                     break;
                 case 3:
-                    resultado = valor / 1000.0; // Litros -> Metros c˙bicos
+                    resultado = valor / 1000.0; // Litros -> Metros cÔøΩbicos
                     break;
                 default:
-                    printf("Convers„o inv·lida!\n");
+                    printf("Convers√£o inv√°lida!\n");
                     return -1;
             }
             break;
@@ -25,10 +25,10 @@ double Volume(int unidadeOrigem, int unidadeDestino, double valor) {
                     resultado = valor / 1000.0; // Mililitros -> Litros
                     break;
                 case 3:
-                    resultado = valor / 1e6; // Mililitros -> Metros c˙bicos
+                    resultado = valor / 1e6; // Mililitros -> Metros cÔøΩbicos
                     break;
                 default:
-                    printf("Convers„o inv·lida!\n");
+                    printf("Convers√£o inv√°lida!\n");
                     return -1;
             }
             break;
@@ -36,19 +36,19 @@ double Volume(int unidadeOrigem, int unidadeDestino, double valor) {
         case 3: // Metros c√∫bicos como origem
             switch (unidadeDestino) {
                 case 1:
-                    resultado = valor * 1000.0; // Metros c˙bicos -> Litros
+                    resultado = valor * 1000.0; // Metros cÔøΩbicos -> Litros
                     break;
                 case 2:
-                    resultado = valor * 1e6; // Metros c˙bicos -> Mililitros
+                    resultado = valor * 1e6; // Metros cÔøΩbicos -> Mililitros
                     break;
                 default:
-                    printf("Convers„o inv·lida!\n");
+                    printf("Convers√£o inv√°lida!\n");
                     return -1;
             }
             break;
 
         default:
-            printf("Convers„o inv·lida!\n");
+            printf("Convers√£o inv√°lida!\n");
             return -1;
     }
 

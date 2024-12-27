@@ -5,7 +5,7 @@
 #include "massa.c"
 #include "massa.h"
 #include "velocidade.c"
-#include "velocidade.H"
+#include "velocidade.h"
 #include "Imc.c"
 #include "Imc.h"
 #include "Area.c"
@@ -220,7 +220,17 @@ int main()
             scanf("%lf", &valor);
 
             resultado = converte_area(unidadeOrigem, unidadeDestino, valor);
-            printf("O resultado da conversão é: %.2lf\n", resultado);
+              if (resultado >= 0)
+            {
+                if (unidadeOrigem == 1 && unidadeDestino == 2) 
+                {
+                    printf("O resultado da conversão é: %.2lf\n", resultado);
+                }
+                else
+                {
+                    printf("O resultado da conversão é: %.4lf\n", resultado);
+                }
+            }
             
             printf("Pressione Enter para continuar...\n");
             while (getchar() != '\n')

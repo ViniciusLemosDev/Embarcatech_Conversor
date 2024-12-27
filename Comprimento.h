@@ -11,7 +11,7 @@ static double comprimento(int unidadeOrigem, int unidadeDestino, double valor) {
             switch (unidadeDestino) {
                 case 1:
                     resultado = valor = valor;
-                    printf("A unidade informada È a mesma da origem!\n"); // m -> m
+                    printf("A unidade informada √© a mesma da origem!\n"); // m -> m
                     break;
                 case 2:
                     resultado = valor * 100.0; // m -> cm
@@ -20,7 +20,7 @@ static double comprimento(int unidadeOrigem, int unidadeDestino, double valor) {
                     resultado = valor * 1000.0; // m -> mm
                     break;
                 default:
-                    printf("Convers„o inv·lida!\n");
+                    printf("Convers√£o inv√°lida!\n");
                     return -1;
             }
             break;
@@ -32,13 +32,13 @@ static double comprimento(int unidadeOrigem, int unidadeDestino, double valor) {
                     break;
                 case 2:
                     resultado = valor = valor;
-                    printf("A unidade informada È a mesma da origem!\n"); // cm -> cm
+                    printf("A unidade informada √© a mesma da origem!\n"); // cm -> cm
                     break;
                 case 3:
                     resultado = valor * 10.0; // cm -> mm
                     break;
                 default:
-                    printf("Convers„o inv·lida!\n");
+                    printf("Convers√£o inv√°lida!\n");
                     return -1;
             }
             break;
@@ -53,16 +53,16 @@ static double comprimento(int unidadeOrigem, int unidadeDestino, double valor) {
                     break;
                 case 3:
                     resultado = valor = valor;
-                    printf("A unidade informada È a mesma da origem!\n"); // mm -> mm
+                    printf("A unidade informada √© a mesma da origem!\n"); // mm -> mm
                     break;
                 default:
-                    printf("Convers„o inv·lida!\n");
+                    printf("Convers√£o inv√°lida!\n");
                     return -1;
             }
             break;
 
         default:
-            printf("Convers„o inv·lida!\n");
+            printf("Convers√£o inv√°lida!\n");
             return -1;
     }
 

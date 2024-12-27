@@ -11,7 +11,7 @@ double massa(int unidadeOrigem, int unidadeDestino, double valor)
     case 1: // quilograma
         switch (unidadeDestino) {
         case 1:
-            printf("A unidade informada È a mesma da origem!\n");
+            printf("A unidade informada √© a mesma da origem!\n");
             break;
         case 2:
             resultado = valor * 1000.0; // quilograma para grama
@@ -20,7 +20,7 @@ double massa(int unidadeOrigem, int unidadeDestino, double valor)
             resultado = valor / 1000.0; // quilograma para tonelada
             break;
         default:
-            printf("Convers„o inv·lida!\n");
+            printf("Convers√£o inv√°lida!\n");
             return -1;
         }
         break;
@@ -31,13 +31,13 @@ double massa(int unidadeOrigem, int unidadeDestino, double valor)
             resultado = valor / 1000.0; // grama para quilograma
             break;
         case 2:
-            printf("A unidade informada È a mesma da origem!\n");
+            printf("A unidade informada √© a mesma da origem!\n");
             break;
         case 3:
             resultado = valor / 1000000.0; // grama para tonelada
             break;
         default:
-            printf("Convers„o inv·lida!\n");
+            printf("Convers√£o inv√°lida!\n");
             return -1;
         }
         break;
@@ -51,16 +51,16 @@ double massa(int unidadeOrigem, int unidadeDestino, double valor)
             resultado = valor * 1000000.0; // tonelada para grama
             break;
         case 3:
-            printf("A unidade informada È a mesma da origem!\n");
+            printf("A unidade informada √© a mesma da origem!\n");
             break;
         default:
-            printf("Convers„o inv·lida!\n");
+            printf("Convers√£o inv√°lida!\n");
             return -1;
         }
         break;
 
     default:
-        printf("Convers„o inv·lida!\n");
+        printf("Convers√£o inv√°lida!\n");
         return -1;
     }
 
